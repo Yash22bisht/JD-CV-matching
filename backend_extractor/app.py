@@ -13,6 +13,8 @@ app = Flask(__name__)
 app.config['RESUME_DIR'] = os.path.join('instance', 'resumes')
 app.config['KNOWLEDGE_FILE'] = os.path.join('instance', 'knowledge.txt')
 
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe' 
+
 # Create necessary directories
 os.makedirs(app.config['RESUME_DIR'], exist_ok=True)
 os.makedirs(os.path.dirname(app.config['KNOWLEDGE_FILE']), exist_ok=True)
